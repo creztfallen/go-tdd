@@ -1,3 +1,3 @@
-module github.com/creztfallen/go-with-tests
+module github.com/creztfallen/go-tdd
 
 go 1.20
