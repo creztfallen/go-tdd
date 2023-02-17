@@ -1,6 +1,6 @@
 # TDD with Go lang.
 
-In this repository, I am reviewing go concepts from a TDD perspective.
+In this repository, I'm reviewing go concepts from a TDD perspective in order to develop this great practice.
 
 <hr>
 
