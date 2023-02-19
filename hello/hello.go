@@ -1,4 +1,4 @@
-package main
+package hello
 
 const prefixHello = "Hello, "
 const prefixHelloFrench = "Bonjour, "
