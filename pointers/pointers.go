@@ -17,6 +17,15 @@ func (w *Wallet) Balance() Bitcoin {
 	return w.balance
 }
 
+func (w *Wallet) Withdraw(amount Bitcoin) error {
+	if amount > w.balance {
+		return InsufficientFundsError
+	}
+
+	w.balance -= amount
+	return nil
+}
+
 type Bitcoin int
 
 func (b Bitcoin) String() string {
@@ -27,13 +36,4 @@ type Stringer interface {
 	String() string
 }
 
-var InsufficientFundsError = errors.New("não é possível retirar: saldo insuficiente")
-
-func (w *Wallet) Withdraw(amount Bitcoin) error {
-	if amount > w.balance {
-		return InsufficientFundsError
-	}
-
-	w.balance -= amount
-	return nil
-}
+var InsufficientFundsError error = errors.New("não é possível retirar: saldo insuficiente")

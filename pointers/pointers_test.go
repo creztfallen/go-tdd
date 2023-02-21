@@ -6,7 +6,7 @@ import (
 
 func TestWallet(t *testing.T) {
 	t.Run("Depositar", func(t *testing.T) {
-		wallet := Wallet{}
+		wallet := Wallet{balance: 0}
 		wallet.Deposit(Bitcoin(10))
 		confirmBalance(t, wallet, Bitcoin(10))
 	})
@@ -19,7 +19,7 @@ func TestWallet(t *testing.T) {
 	})
 	t.Run("Retirar com saldo insuficiente", func(t *testing.T) {
 		initialBalance := Bitcoin(20)
-		wallet := Wallet{initialBalance}
+		wallet := Wallet{balance: initialBalance}
 		erro := wallet.Withdraw(Bitcoin(100))
 
 		confirmBalance(t, wallet, initialBalance)
