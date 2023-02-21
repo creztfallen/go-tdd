@@ -2,11 +2,22 @@ package main
 
 import (
 	"fmt"
-	"github.com/creztfallen/go-tdd/hello"
-	"github.com/creztfallen/go-tdd/integers"
+	"net/http"
+	// "os"
+
+	di "github.com/creztfallen/go-tdd/dependency-injection"
 )
 
+func HandlerGreeting(w http.ResponseWriter, r *http.Request) {
+	di.Greet(w, "world")
+}
+
 func main() {
-	fmt.Println(hello.Hello("Macumba", "espanhol"))
-	fmt.Println(integers.Add(2, 2))
+	err := http.ListenAndServe(":5000", http.HandlerFunc(HandlerGreeting))
+
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	// di.Greet(os.Stdout, "Geralt")
 }
