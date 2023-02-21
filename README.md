@@ -2,6 +2,11 @@
 
 In this repository, I'm reviewing go concepts from a TDD perspective in order to develop this great practice.
 
+<br>
+
+As the main reference, I'm using the following:
+```https://larien.gitbook.io/aprenda-go-com-testes/```
+
 <hr>
 
 ## What is TDD?
