@@ -2,8 +2,6 @@
 
 In this repository, I'm reviewing go concepts from a TDD perspective in order to develop this great practice.
 
-<br>
-
 <hr>
 
 ## What is TDD?
