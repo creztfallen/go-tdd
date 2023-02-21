@@ -4,8 +4,7 @@ In this repository, I'm reviewing go concepts from a TDD perspective in order to
 
 <br>
 
-As the main reference, I'm using the following:
-```https://larien.gitbook.io/aprenda-go-com-testes/```
+As the main reference, I'm using the following:https://larien.gitbook.io/aprenda-go-com-testes/
 
 <hr>
 
