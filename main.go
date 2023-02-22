@@ -1,23 +1,12 @@
 package main
 
 import (
-	"fmt"
-	"net/http"
-	// "os"
+	"os"
 
-	di "github.com/creztfallen/go-tdd/dependency-injection"
+	"github.com/creztfallen/go-tdd/mock"
 )
 
-func HandlerGreeting(w http.ResponseWriter, r *http.Request) {
-	di.Greet(w, "world")
-}
-
 func main() {
-	err := http.ListenAndServe(":5000", http.HandlerFunc(HandlerGreeting))
-
-	if err != nil {
-		fmt.Println(err)
-	}
-
-	// di.Greet(os.Stdout, "Geralt")
+	sleeper := &mock.StandardSleeper{}
+	mock.Counting(os.Stdout, sleeper)
 }
